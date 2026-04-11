@@ -1,9 +1,10 @@
 #ifndef PRICE_H
 #define PRICE_H
 
-struct Price {
+struct Price
+{
   int hryvnia;
-  short int kopiyka;
+  int kopiyka;
 };
 
 void normalize(Price &p);
@@ -14,6 +15,8 @@ void multiply(Price &p, int n);
 
 void round_price(Price &p);
 
-void print_price(Price p, const char *label = nullptr);
+void print_price(Price p, const char *text);
+
+void print_result();
 
 #endif
