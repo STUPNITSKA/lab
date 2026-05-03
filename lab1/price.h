@@ -4,7 +4,7 @@
 struct Price
 {
   int hryvnia;
-  int kopiyka;
+  short int kopiyka;
 };
 
 void normalize(Price &p);

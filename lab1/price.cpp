@@ -46,7 +46,7 @@ void print_result() {
   SetConsoleCP(65001);
   FILE *fp = nullptr;
 
-  if (fopen_s(&fp, "input.txt", "r") != 0 || fp == nullptr)
+  if (fopen_s(&fp, "input.txt", "r") != 0 )
   {
     printf("Помилка відкриття файлу\n");
     return;
@@ -54,9 +54,10 @@ void print_result() {
 
   Price total = {0, 0};
 
-  int hrn, kop, qty;
+  int hrn, qty;
+  short int kop;
 
-  while (fscanf_s(fp, "%d %d %d", &hrn, &kop, &qty) == 3) {
+  while (fscanf_s(fp, "%d %hd %d", &hrn, &kop, &qty) == 3) {
 
     Price line = {hrn, kop};
 
@@ -70,10 +71,9 @@ void print_result() {
 
   print_price(total, "Загальна сума");
 
-  Price rounded = total;
 
-  round_price(rounded);
+  round_price(total);
 
-  print_price(rounded, "До оплати (заокруглено)");
+  print_price(total, "До оплати (заокруглено)");
 
 }
