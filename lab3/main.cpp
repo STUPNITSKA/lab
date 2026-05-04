@@ -9,7 +9,7 @@ int main()
     Dyhotomia_class *dyh = new Dyhotomia_class();
 
     dyh->setVolumes(0.9, 2);
-    dyh->setTolerance(0.001);
+    dyh->setTolerance(0.00001);
 
     cout << "Dyhotomia method: " << dyh->solve_dyhotomia() << endl;
 

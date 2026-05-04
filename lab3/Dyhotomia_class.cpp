@@ -4,7 +4,7 @@ Dyhotomia_class::Dyhotomia_class()
 {
     a = 0;
     b = 0;
-    eps = 0.001;
+    eps = 0.00001;
 }
 
 Dyhotomia_class::~Dyhotomia_class()
